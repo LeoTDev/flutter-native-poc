@@ -14,7 +14,16 @@ class HybridComposition extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Hybrid Composition"),
       ),
-      body: _nativeView(context),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(color: Colors.red, width:200, height:200, child: const Center(child: Text("Flutter View")),),
+            Container(color: Colors.red, width:200, height:200, child: _nativeView(context)),
+            Container(color: Colors.red, width:200, height:200, child: const Center(child: Text("Flutter View")),),
+          ],
+        ),
+      ),
     );
   }
 
